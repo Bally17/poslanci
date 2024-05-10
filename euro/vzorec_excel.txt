@@ -1,0 +1,1 @@
+= "INSERT INTO tabulka_poslanci_euro (meno, priezvisko, web_source, email, strana, stat) VALUES ('" & A2 & "', '" & B2 & "', '" & C2 & "', '" & D2 & "', '" & E2 & "', '" & F2 & "');"
