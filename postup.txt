@@ -1,0 +1,35 @@
+1. spustenie python programu (ten nam vytvori subor "poslanci.csv", do ktoreho sa nam ulozia hodnoty zobrate zo samostatnych podstranok pre kazdeho poslanca z hlavnej stranky "Zoznam poslancov")
+2. poslanci.csv otvorime pomocou excelu a do bunky K2 vlozime prikaz:
+= "INSERT INTO tabulka_poslanci (email, web_source, meno, priezvisko, titul, strana, datum_narodenia, narodnost, bydlisko, kraj) VALUES ('" & A2 & "', '" & B2 & "', '" & C2 & "', '" & D2 & "', '" & E2 & "', '" & F2 & "', '" & TEXT(G2; "dd.mm.yyyy") & "', '" & H2 & "', '" & I2 & "', '" & J2 & "');"
+a potiahneme bunku az na spodok zoznamu co nam zabezpeci pouzite prikazu pre kazdy riadok
+3. stlpec K si skopirujeme
+4. vytvorime si novu databazu a vlozime prikaz:
+CREATE TABLE tabulka_poslanci (
+    email VARCHAR(255),
+    web_source VARCHAR(255),
+    meno VARCHAR(255),
+    priezvisko VARCHAR(255),
+    titul VARCHAR(255),
+    strana VARCHAR(255),
+    datum_narodenia VARCHAR(255),
+    narodnost VARCHAR(255),
+    bydlisko VARCHAR(255),
+    kraj VARCHAR(255)
+);
+a vlozime skopirovany stlpec K pod, co nam zabezpeci vlozenie vsetkych insertov do danej vytvorenej tabulky
+
+	mozme to aj aplikovat takto: vytvorime si novu databazu, potom si vytvorime si novy textovy subor s koncovkov .sql, do ktore si vlozime
+CREATE TABLE tabulka_poslanci (
+    email VARCHAR(255),
+    web_source VARCHAR(255),
+    meno VARCHAR(255),
+    priezvisko VARCHAR(255),
+    titul VARCHAR(255),
+    strana VARCHAR(255),
+    datum_narodenia VARCHAR(255),
+    narodnost VARCHAR(255),
+    bydlisko VARCHAR(255),
+    kraj VARCHAR(255)
+);
+a skopirovany stlpec K pod
+	ten subor si v mysql workbench otvorime cez "Open SQL script" a dame Execute, co nam zabezpeci vytvorenie tabulky
